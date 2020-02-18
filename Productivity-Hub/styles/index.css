@@ -39,7 +39,7 @@ webview {
 }
 
 li a:hover {
-    background-color: #555;
+    background-color: rgb(85, 85, 85);
     color: white;
   }
 
