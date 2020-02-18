@@ -3,10 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../styles.index.css">
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div id="menu">
+        <ul>
+          <li><a id="Todoist"><img src="../img/todoist.png" width="50" height="50" alt="ToDoist" title="ToDoist"></a></li>
+          <li><a id="Gmail"><img src="../img/gmail.png" width="50" height="50" alt="gmail" title="Gmail"</a></li>
+          <li><a id="Help" href="javascript:void(0);">Help</a></li>
+        </ul>
+      </div>
+
+      <div id="App">
+        <h1>💖 Hello World!</h1>
+        <p>Welcome to your Electron application.</p>
+      </div>
   </body>
+
+  <script type="text/jsx">
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import {AppContainer} from 'react-hot-loader';
+  
+    const render = () => {
+      const App = require('./app').default;
+      ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('App'));
+    }
+    render();
+    if (module.hot) {
+      module.hot.accept(render);
+    }
+  </script>
 </html>
