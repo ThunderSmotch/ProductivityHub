@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import path from 'path';
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import { enableLiveReload } from 'electron-compile';
 
@@ -13,12 +14,13 @@ if (isDevMode) enableLiveReload({ strategy: 'react-hmr' });
 const createWindow = async () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 768,
+    webPreferences: { nodeIntegration: true },
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
   if (isDevMode) {
