@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>Productivity Hub</title>
+  
+  <script type="text/jsx" src="./test.js"></script>
+
+  <link rel="stylesheet" href="../styles/index.css">
 </head>
-<body style="overflow: hidden; background-color: rgba(0,0,0,0); margin: 0" >
+
+<body>
+  <div id=menu>
+    <ul>
+      <li><a id="addExt"><img src="../img/plusW.svg" width="50" height="50" alt="Add an Extension" title="Add Extension"></a></li>
+    </ul>
+  </div>
   <div id="App"></div>
 </body>
 
 <script type="text/jsx">
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
-
-const render = () => {
-  const App = require('./app').default;
-  ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('App'));
-}
-
-render();
-if (module.hot) {
-  module.hot.accept(render);
-}
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import {AppContainer} from 'react-hot-loader';
+  
+  const render = () => {
+    const App = require('./app').default;
+    ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('App'));
+  }
+  
+  render();
+  if (module.hot) {
+    module.hot.accept(render);
+  }
 </script>
+
 </html>
