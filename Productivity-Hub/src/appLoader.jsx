@@ -12,3 +12,8 @@ render();
 if (module.hot) {
   module.hot.accept(render);
 }
+
+var a = document.getElementById("addExt");
+a.onclick = () => {
+    console.log("Test");
+}

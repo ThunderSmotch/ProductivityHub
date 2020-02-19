@@ -1,7 +1,6 @@
-div {
-    height: 100%;
-    width: calc(100% - 60px);
-    position: fixed;
+body {
+margin: 0px;
+padding: 0px;
 }
 
 #menu {
@@ -36,6 +35,9 @@ webview {
     position: absolute;
     z-index: 99;
     margin-left:60px;
+    position: fixed;
+    height: 100%;
+    width: calc(100% - 60px);
 }
 
 li a:hover {
